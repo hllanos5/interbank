@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "f35bb3b8-2437-4a3a-8602-f43f533428b8",
+		"name": "Interbank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11898375"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5zLmxsYW5vc0BnbWFpbC5jb20iLCJleHAiOjE3MTY1Mjk2MDIsIm5vbWJyZSI6IkhhbnMgTGxhbm9zIn0.SqeLyucnyJsG3WKKDsBGaC1TbAkSpKWeefNWlAJwjOg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cambiar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5zLmxsYW5vc0BnbWFpbC5jb20iLCJleHAiOjE3MTY1Mjk2NjUsIm5vbWJyZSI6IkhhbnMgTGxhbm9zIn0.nRuzChpPJTCvA2a6Wzs5WuSv7_Nz5URgBSWAbXtlhZE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monedaOrigen\": \"USD\",\r\n\t\"monedaDestino\": \"PEN\",\r\n    \"monto\": 1000\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tipo-cambio/cambiar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipo-cambio",
+						"cambiar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tipoCambioListar",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYW5zLmxsYW5vc0BnbWFpbC5jb20iLCJleHAiOjE3MTY1Mjk2NjUsIm5vbWJyZSI6IkhhbnMgTGxhbm9zIn0.nRuzChpPJTCvA2a6Wzs5WuSv7_Nz5URgBSWAbXtlhZE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"monedaOrigen\": \"PEN\",\r\n\t\"monedaDestino\": \"USD\",\r\n    \"monto\": 1000\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/tipo-cambio",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tipo-cambio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"hans.llanos@gmail.com\",\r\n    \"password\" : \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
